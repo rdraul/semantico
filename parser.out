@@ -1,0 +1,1347 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> declaracion
+Rule 1     declaracion -> INT expresion EQUALS expresion SEMI
+Rule 2     declaracion -> INT expresion SEMI
+Rule 3     declaracion -> DOUBLE expresion EQUALS expresion SEMI
+Rule 4     declaracion -> DOUBLE expresion SEMI
+Rule 5     declaracion -> FLOAT expresion EQUALS expresion SEMI
+Rule 6     declaracion -> FLOAT expresion SEMI
+Rule 7     declaracion -> BOOL expresion EQUALS expresion SEMI
+Rule 8     declaracion -> BOOL expresion SEMI
+Rule 9     declaracion -> STRING expresion EQUALS expresion SEMI
+Rule 10    declaracion -> STRING expresion SEMI
+Rule 11    declaracion -> expresion EQUALS expresion SEMI
+Rule 12    declaracion -> expresion SEMI
+Rule 13    expresion -> expresion SUMA expresion
+Rule 14    expresion -> expresion RESTA expresion
+Rule 15    expresion -> expresion MULTI expresion
+Rule 16    expresion -> expresion DIVISION expresion
+Rule 17    expresion -> RESTA expresion
+Rule 18    expresion -> expresion MENORQ expresion
+Rule 19    expresion -> expresion MAYORQ expresion
+Rule 20    expresion -> expresion MENORIGUAL expresion
+Rule 21    expresion -> expresion MAYORIGUAL expresion
+Rule 22    expresion -> DECIMAL
+Rule 23    expresion -> NUMERO
+Rule 24    expresion -> ID
+Rule 25    expresion -> TXT
+
+Terminals, with rules where they appear
+
+BOOL                 : 7 8
+DECIMAL              : 22
+DIVISION             : 16
+DOUBLE               : 3 4
+EQUALS               : 1 3 5 7 9 11
+FLOAT                : 5 6
+ID                   : 24
+INT                  : 1 2
+MAYORIGUAL           : 21
+MAYORQ               : 19
+MENORIGUAL           : 20
+MENORQ               : 18
+MULTI                : 15
+NUMERO               : 23
+RESTA                : 14 17
+SEMI                 : 1 2 3 4 5 6 7 8 9 10 11 12
+STRING               : 9 10
+SUMA                 : 13
+TXT                  : 25
+error                : 
+
+Nonterminals, with rules where they appear
+
+declaracion          : 0
+expresion            : 1 1 2 3 3 4 5 5 6 7 7 8 9 9 10 11 11 12 13 13 14 14 15 15 16 16 17 18 18 19 19 20 20 21 21
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . declaracion
+    (1) declaracion -> . INT expresion EQUALS expresion SEMI
+    (2) declaracion -> . INT expresion SEMI
+    (3) declaracion -> . DOUBLE expresion EQUALS expresion SEMI
+    (4) declaracion -> . DOUBLE expresion SEMI
+    (5) declaracion -> . FLOAT expresion EQUALS expresion SEMI
+    (6) declaracion -> . FLOAT expresion SEMI
+    (7) declaracion -> . BOOL expresion EQUALS expresion SEMI
+    (8) declaracion -> . BOOL expresion SEMI
+    (9) declaracion -> . STRING expresion EQUALS expresion SEMI
+    (10) declaracion -> . STRING expresion SEMI
+    (11) declaracion -> . expresion EQUALS expresion SEMI
+    (12) declaracion -> . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    INT             shift and go to state 2
+    DOUBLE          shift and go to state 4
+    FLOAT           shift and go to state 5
+    BOOL            shift and go to state 6
+    STRING          shift and go to state 7
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    declaracion                    shift and go to state 1
+    expresion                      shift and go to state 3
+
+state 1
+
+    (0) S' -> declaracion .
+
+
+
+state 2
+
+    (1) declaracion -> INT . expresion EQUALS expresion SEMI
+    (2) declaracion -> INT . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 13
+
+state 3
+
+    (11) declaracion -> expresion . EQUALS expresion SEMI
+    (12) declaracion -> expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          shift and go to state 14
+    SEMI            shift and go to state 15
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 4
+
+    (3) declaracion -> DOUBLE . expresion EQUALS expresion SEMI
+    (4) declaracion -> DOUBLE . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 24
+
+state 5
+
+    (5) declaracion -> FLOAT . expresion EQUALS expresion SEMI
+    (6) declaracion -> FLOAT . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 25
+
+state 6
+
+    (7) declaracion -> BOOL . expresion EQUALS expresion SEMI
+    (8) declaracion -> BOOL . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 26
+
+state 7
+
+    (9) declaracion -> STRING . expresion EQUALS expresion SEMI
+    (10) declaracion -> STRING . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 27
+
+state 8
+
+    (17) expresion -> RESTA . expresion
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 28
+
+state 9
+
+    (22) expresion -> DECIMAL .
+
+    EQUALS          reduce using rule 22 (expresion -> DECIMAL .)
+    SEMI            reduce using rule 22 (expresion -> DECIMAL .)
+    SUMA            reduce using rule 22 (expresion -> DECIMAL .)
+    RESTA           reduce using rule 22 (expresion -> DECIMAL .)
+    MULTI           reduce using rule 22 (expresion -> DECIMAL .)
+    DIVISION        reduce using rule 22 (expresion -> DECIMAL .)
+    MENORQ          reduce using rule 22 (expresion -> DECIMAL .)
+    MAYORQ          reduce using rule 22 (expresion -> DECIMAL .)
+    MENORIGUAL      reduce using rule 22 (expresion -> DECIMAL .)
+    MAYORIGUAL      reduce using rule 22 (expresion -> DECIMAL .)
+
+
+state 10
+
+    (23) expresion -> NUMERO .
+
+    EQUALS          reduce using rule 23 (expresion -> NUMERO .)
+    SEMI            reduce using rule 23 (expresion -> NUMERO .)
+    SUMA            reduce using rule 23 (expresion -> NUMERO .)
+    RESTA           reduce using rule 23 (expresion -> NUMERO .)
+    MULTI           reduce using rule 23 (expresion -> NUMERO .)
+    DIVISION        reduce using rule 23 (expresion -> NUMERO .)
+    MENORQ          reduce using rule 23 (expresion -> NUMERO .)
+    MAYORQ          reduce using rule 23 (expresion -> NUMERO .)
+    MENORIGUAL      reduce using rule 23 (expresion -> NUMERO .)
+    MAYORIGUAL      reduce using rule 23 (expresion -> NUMERO .)
+
+
+state 11
+
+    (24) expresion -> ID .
+
+    EQUALS          reduce using rule 24 (expresion -> ID .)
+    SEMI            reduce using rule 24 (expresion -> ID .)
+    SUMA            reduce using rule 24 (expresion -> ID .)
+    RESTA           reduce using rule 24 (expresion -> ID .)
+    MULTI           reduce using rule 24 (expresion -> ID .)
+    DIVISION        reduce using rule 24 (expresion -> ID .)
+    MENORQ          reduce using rule 24 (expresion -> ID .)
+    MAYORQ          reduce using rule 24 (expresion -> ID .)
+    MENORIGUAL      reduce using rule 24 (expresion -> ID .)
+    MAYORIGUAL      reduce using rule 24 (expresion -> ID .)
+
+
+state 12
+
+    (25) expresion -> TXT .
+
+    EQUALS          reduce using rule 25 (expresion -> TXT .)
+    SEMI            reduce using rule 25 (expresion -> TXT .)
+    SUMA            reduce using rule 25 (expresion -> TXT .)
+    RESTA           reduce using rule 25 (expresion -> TXT .)
+    MULTI           reduce using rule 25 (expresion -> TXT .)
+    DIVISION        reduce using rule 25 (expresion -> TXT .)
+    MENORQ          reduce using rule 25 (expresion -> TXT .)
+    MAYORQ          reduce using rule 25 (expresion -> TXT .)
+    MENORIGUAL      reduce using rule 25 (expresion -> TXT .)
+    MAYORIGUAL      reduce using rule 25 (expresion -> TXT .)
+
+
+state 13
+
+    (1) declaracion -> INT expresion . EQUALS expresion SEMI
+    (2) declaracion -> INT expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          shift and go to state 29
+    SEMI            shift and go to state 30
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 14
+
+    (11) declaracion -> expresion EQUALS . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 31
+
+state 15
+
+    (12) declaracion -> expresion SEMI .
+
+    $end            reduce using rule 12 (declaracion -> expresion SEMI .)
+
+
+state 16
+
+    (13) expresion -> expresion SUMA . expresion
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 32
+
+state 17
+
+    (14) expresion -> expresion RESTA . expresion
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 33
+
+state 18
+
+    (15) expresion -> expresion MULTI . expresion
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 34
+
+state 19
+
+    (16) expresion -> expresion DIVISION . expresion
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 35
+
+state 20
+
+    (18) expresion -> expresion MENORQ . expresion
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 36
+
+state 21
+
+    (19) expresion -> expresion MAYORQ . expresion
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 37
+
+state 22
+
+    (20) expresion -> expresion MENORIGUAL . expresion
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 38
+
+state 23
+
+    (21) expresion -> expresion MAYORIGUAL . expresion
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 39
+
+state 24
+
+    (3) declaracion -> DOUBLE expresion . EQUALS expresion SEMI
+    (4) declaracion -> DOUBLE expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          shift and go to state 40
+    SEMI            shift and go to state 41
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 25
+
+    (5) declaracion -> FLOAT expresion . EQUALS expresion SEMI
+    (6) declaracion -> FLOAT expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          shift and go to state 42
+    SEMI            shift and go to state 43
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 26
+
+    (7) declaracion -> BOOL expresion . EQUALS expresion SEMI
+    (8) declaracion -> BOOL expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          shift and go to state 44
+    SEMI            shift and go to state 45
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 27
+
+    (9) declaracion -> STRING expresion . EQUALS expresion SEMI
+    (10) declaracion -> STRING expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          shift and go to state 46
+    SEMI            shift and go to state 47
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 28
+
+    (17) expresion -> RESTA expresion .
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          reduce using rule 17 (expresion -> RESTA expresion .)
+    SEMI            reduce using rule 17 (expresion -> RESTA expresion .)
+    SUMA            reduce using rule 17 (expresion -> RESTA expresion .)
+    RESTA           reduce using rule 17 (expresion -> RESTA expresion .)
+    MULTI           reduce using rule 17 (expresion -> RESTA expresion .)
+    DIVISION        reduce using rule 17 (expresion -> RESTA expresion .)
+    MENORQ          reduce using rule 17 (expresion -> RESTA expresion .)
+    MAYORQ          reduce using rule 17 (expresion -> RESTA expresion .)
+    MENORIGUAL      reduce using rule 17 (expresion -> RESTA expresion .)
+    MAYORIGUAL      reduce using rule 17 (expresion -> RESTA expresion .)
+
+  ! SUMA            [ shift and go to state 16 ]
+  ! RESTA           [ shift and go to state 17 ]
+  ! MULTI           [ shift and go to state 18 ]
+  ! DIVISION        [ shift and go to state 19 ]
+  ! MENORQ          [ shift and go to state 20 ]
+  ! MAYORQ          [ shift and go to state 21 ]
+  ! MENORIGUAL      [ shift and go to state 22 ]
+  ! MAYORIGUAL      [ shift and go to state 23 ]
+
+
+state 29
+
+    (1) declaracion -> INT expresion EQUALS . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 48
+
+state 30
+
+    (2) declaracion -> INT expresion SEMI .
+
+    $end            reduce using rule 2 (declaracion -> INT expresion SEMI .)
+
+
+state 31
+
+    (11) declaracion -> expresion EQUALS expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    SEMI            shift and go to state 49
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 32
+
+    (13) expresion -> expresion SUMA expresion .
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          reduce using rule 13 (expresion -> expresion SUMA expresion .)
+    SEMI            reduce using rule 13 (expresion -> expresion SUMA expresion .)
+    SUMA            reduce using rule 13 (expresion -> expresion SUMA expresion .)
+    RESTA           reduce using rule 13 (expresion -> expresion SUMA expresion .)
+    MULTI           reduce using rule 13 (expresion -> expresion SUMA expresion .)
+    DIVISION        reduce using rule 13 (expresion -> expresion SUMA expresion .)
+    MENORQ          reduce using rule 13 (expresion -> expresion SUMA expresion .)
+    MAYORQ          reduce using rule 13 (expresion -> expresion SUMA expresion .)
+    MENORIGUAL      reduce using rule 13 (expresion -> expresion SUMA expresion .)
+    MAYORIGUAL      reduce using rule 13 (expresion -> expresion SUMA expresion .)
+
+  ! SUMA            [ shift and go to state 16 ]
+  ! RESTA           [ shift and go to state 17 ]
+  ! MULTI           [ shift and go to state 18 ]
+  ! DIVISION        [ shift and go to state 19 ]
+  ! MENORQ          [ shift and go to state 20 ]
+  ! MAYORQ          [ shift and go to state 21 ]
+  ! MENORIGUAL      [ shift and go to state 22 ]
+  ! MAYORIGUAL      [ shift and go to state 23 ]
+
+
+state 33
+
+    (14) expresion -> expresion RESTA expresion .
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          reduce using rule 14 (expresion -> expresion RESTA expresion .)
+    SEMI            reduce using rule 14 (expresion -> expresion RESTA expresion .)
+    SUMA            reduce using rule 14 (expresion -> expresion RESTA expresion .)
+    RESTA           reduce using rule 14 (expresion -> expresion RESTA expresion .)
+    MULTI           reduce using rule 14 (expresion -> expresion RESTA expresion .)
+    DIVISION        reduce using rule 14 (expresion -> expresion RESTA expresion .)
+    MENORQ          reduce using rule 14 (expresion -> expresion RESTA expresion .)
+    MAYORQ          reduce using rule 14 (expresion -> expresion RESTA expresion .)
+    MENORIGUAL      reduce using rule 14 (expresion -> expresion RESTA expresion .)
+    MAYORIGUAL      reduce using rule 14 (expresion -> expresion RESTA expresion .)
+
+  ! SUMA            [ shift and go to state 16 ]
+  ! RESTA           [ shift and go to state 17 ]
+  ! MULTI           [ shift and go to state 18 ]
+  ! DIVISION        [ shift and go to state 19 ]
+  ! MENORQ          [ shift and go to state 20 ]
+  ! MAYORQ          [ shift and go to state 21 ]
+  ! MENORIGUAL      [ shift and go to state 22 ]
+  ! MAYORIGUAL      [ shift and go to state 23 ]
+
+
+state 34
+
+    (15) expresion -> expresion MULTI expresion .
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          reduce using rule 15 (expresion -> expresion MULTI expresion .)
+    SEMI            reduce using rule 15 (expresion -> expresion MULTI expresion .)
+    MULTI           reduce using rule 15 (expresion -> expresion MULTI expresion .)
+    DIVISION        reduce using rule 15 (expresion -> expresion MULTI expresion .)
+    MENORQ          reduce using rule 15 (expresion -> expresion MULTI expresion .)
+    MAYORQ          reduce using rule 15 (expresion -> expresion MULTI expresion .)
+    MENORIGUAL      reduce using rule 15 (expresion -> expresion MULTI expresion .)
+    MAYORIGUAL      reduce using rule 15 (expresion -> expresion MULTI expresion .)
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+
+  ! SUMA            [ reduce using rule 15 (expresion -> expresion MULTI expresion .) ]
+  ! RESTA           [ reduce using rule 15 (expresion -> expresion MULTI expresion .) ]
+  ! MULTI           [ shift and go to state 18 ]
+  ! DIVISION        [ shift and go to state 19 ]
+  ! MENORQ          [ shift and go to state 20 ]
+  ! MAYORQ          [ shift and go to state 21 ]
+  ! MENORIGUAL      [ shift and go to state 22 ]
+  ! MAYORIGUAL      [ shift and go to state 23 ]
+
+
+state 35
+
+    (16) expresion -> expresion DIVISION expresion .
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          reduce using rule 16 (expresion -> expresion DIVISION expresion .)
+    SEMI            reduce using rule 16 (expresion -> expresion DIVISION expresion .)
+    MULTI           reduce using rule 16 (expresion -> expresion DIVISION expresion .)
+    DIVISION        reduce using rule 16 (expresion -> expresion DIVISION expresion .)
+    MENORQ          reduce using rule 16 (expresion -> expresion DIVISION expresion .)
+    MAYORQ          reduce using rule 16 (expresion -> expresion DIVISION expresion .)
+    MENORIGUAL      reduce using rule 16 (expresion -> expresion DIVISION expresion .)
+    MAYORIGUAL      reduce using rule 16 (expresion -> expresion DIVISION expresion .)
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+
+  ! SUMA            [ reduce using rule 16 (expresion -> expresion DIVISION expresion .) ]
+  ! RESTA           [ reduce using rule 16 (expresion -> expresion DIVISION expresion .) ]
+  ! MULTI           [ shift and go to state 18 ]
+  ! DIVISION        [ shift and go to state 19 ]
+  ! MENORQ          [ shift and go to state 20 ]
+  ! MAYORQ          [ shift and go to state 21 ]
+  ! MENORIGUAL      [ shift and go to state 22 ]
+  ! MAYORIGUAL      [ shift and go to state 23 ]
+
+
+state 36
+
+    (18) expresion -> expresion MENORQ expresion .
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          reduce using rule 18 (expresion -> expresion MENORQ expresion .)
+    SEMI            reduce using rule 18 (expresion -> expresion MENORQ expresion .)
+    MENORQ          reduce using rule 18 (expresion -> expresion MENORQ expresion .)
+    MAYORQ          reduce using rule 18 (expresion -> expresion MENORQ expresion .)
+    MENORIGUAL      reduce using rule 18 (expresion -> expresion MENORQ expresion .)
+    MAYORIGUAL      reduce using rule 18 (expresion -> expresion MENORQ expresion .)
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+
+  ! SUMA            [ reduce using rule 18 (expresion -> expresion MENORQ expresion .) ]
+  ! RESTA           [ reduce using rule 18 (expresion -> expresion MENORQ expresion .) ]
+  ! MULTI           [ reduce using rule 18 (expresion -> expresion MENORQ expresion .) ]
+  ! DIVISION        [ reduce using rule 18 (expresion -> expresion MENORQ expresion .) ]
+  ! MENORQ          [ shift and go to state 20 ]
+  ! MAYORQ          [ shift and go to state 21 ]
+  ! MENORIGUAL      [ shift and go to state 22 ]
+  ! MAYORIGUAL      [ shift and go to state 23 ]
+
+
+state 37
+
+    (19) expresion -> expresion MAYORQ expresion .
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          reduce using rule 19 (expresion -> expresion MAYORQ expresion .)
+    SEMI            reduce using rule 19 (expresion -> expresion MAYORQ expresion .)
+    MENORQ          reduce using rule 19 (expresion -> expresion MAYORQ expresion .)
+    MAYORQ          reduce using rule 19 (expresion -> expresion MAYORQ expresion .)
+    MENORIGUAL      reduce using rule 19 (expresion -> expresion MAYORQ expresion .)
+    MAYORIGUAL      reduce using rule 19 (expresion -> expresion MAYORQ expresion .)
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+
+  ! SUMA            [ reduce using rule 19 (expresion -> expresion MAYORQ expresion .) ]
+  ! RESTA           [ reduce using rule 19 (expresion -> expresion MAYORQ expresion .) ]
+  ! MULTI           [ reduce using rule 19 (expresion -> expresion MAYORQ expresion .) ]
+  ! DIVISION        [ reduce using rule 19 (expresion -> expresion MAYORQ expresion .) ]
+  ! MENORQ          [ shift and go to state 20 ]
+  ! MAYORQ          [ shift and go to state 21 ]
+  ! MENORIGUAL      [ shift and go to state 22 ]
+  ! MAYORIGUAL      [ shift and go to state 23 ]
+
+
+state 38
+
+    (20) expresion -> expresion MENORIGUAL expresion .
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .)
+    SEMI            reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .)
+    MENORQ          reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .)
+    MAYORQ          reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .)
+    MENORIGUAL      reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .)
+    MAYORIGUAL      reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .)
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+
+  ! SUMA            [ reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! RESTA           [ reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! MULTI           [ reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! DIVISION        [ reduce using rule 20 (expresion -> expresion MENORIGUAL expresion .) ]
+  ! MENORQ          [ shift and go to state 20 ]
+  ! MAYORQ          [ shift and go to state 21 ]
+  ! MENORIGUAL      [ shift and go to state 22 ]
+  ! MAYORIGUAL      [ shift and go to state 23 ]
+
+
+state 39
+
+    (21) expresion -> expresion MAYORIGUAL expresion .
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    EQUALS          reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .)
+    SEMI            reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .)
+    MENORQ          reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .)
+    MAYORQ          reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .)
+    MENORIGUAL      reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .)
+    MAYORIGUAL      reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .)
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+
+  ! SUMA            [ reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .) ]
+  ! RESTA           [ reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .) ]
+  ! MULTI           [ reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .) ]
+  ! DIVISION        [ reduce using rule 21 (expresion -> expresion MAYORIGUAL expresion .) ]
+  ! MENORQ          [ shift and go to state 20 ]
+  ! MAYORQ          [ shift and go to state 21 ]
+  ! MENORIGUAL      [ shift and go to state 22 ]
+  ! MAYORIGUAL      [ shift and go to state 23 ]
+
+
+state 40
+
+    (3) declaracion -> DOUBLE expresion EQUALS . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 50
+
+state 41
+
+    (4) declaracion -> DOUBLE expresion SEMI .
+
+    $end            reduce using rule 4 (declaracion -> DOUBLE expresion SEMI .)
+
+
+state 42
+
+    (5) declaracion -> FLOAT expresion EQUALS . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 51
+
+state 43
+
+    (6) declaracion -> FLOAT expresion SEMI .
+
+    $end            reduce using rule 6 (declaracion -> FLOAT expresion SEMI .)
+
+
+state 44
+
+    (7) declaracion -> BOOL expresion EQUALS . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 52
+
+state 45
+
+    (8) declaracion -> BOOL expresion SEMI .
+
+    $end            reduce using rule 8 (declaracion -> BOOL expresion SEMI .)
+
+
+state 46
+
+    (9) declaracion -> STRING expresion EQUALS . expresion SEMI
+    (13) expresion -> . expresion SUMA expresion
+    (14) expresion -> . expresion RESTA expresion
+    (15) expresion -> . expresion MULTI expresion
+    (16) expresion -> . expresion DIVISION expresion
+    (17) expresion -> . RESTA expresion
+    (18) expresion -> . expresion MENORQ expresion
+    (19) expresion -> . expresion MAYORQ expresion
+    (20) expresion -> . expresion MENORIGUAL expresion
+    (21) expresion -> . expresion MAYORIGUAL expresion
+    (22) expresion -> . DECIMAL
+    (23) expresion -> . NUMERO
+    (24) expresion -> . ID
+    (25) expresion -> . TXT
+
+    RESTA           shift and go to state 8
+    DECIMAL         shift and go to state 9
+    NUMERO          shift and go to state 10
+    ID              shift and go to state 11
+    TXT             shift and go to state 12
+
+    expresion                      shift and go to state 53
+
+state 47
+
+    (10) declaracion -> STRING expresion SEMI .
+
+    $end            reduce using rule 10 (declaracion -> STRING expresion SEMI .)
+
+
+state 48
+
+    (1) declaracion -> INT expresion EQUALS expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    SEMI            shift and go to state 54
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 49
+
+    (11) declaracion -> expresion EQUALS expresion SEMI .
+
+    $end            reduce using rule 11 (declaracion -> expresion EQUALS expresion SEMI .)
+
+
+state 50
+
+    (3) declaracion -> DOUBLE expresion EQUALS expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    SEMI            shift and go to state 55
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 51
+
+    (5) declaracion -> FLOAT expresion EQUALS expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    SEMI            shift and go to state 56
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 52
+
+    (7) declaracion -> BOOL expresion EQUALS expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    SEMI            shift and go to state 57
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 53
+
+    (9) declaracion -> STRING expresion EQUALS expresion . SEMI
+    (13) expresion -> expresion . SUMA expresion
+    (14) expresion -> expresion . RESTA expresion
+    (15) expresion -> expresion . MULTI expresion
+    (16) expresion -> expresion . DIVISION expresion
+    (18) expresion -> expresion . MENORQ expresion
+    (19) expresion -> expresion . MAYORQ expresion
+    (20) expresion -> expresion . MENORIGUAL expresion
+    (21) expresion -> expresion . MAYORIGUAL expresion
+
+    SEMI            shift and go to state 58
+    SUMA            shift and go to state 16
+    RESTA           shift and go to state 17
+    MULTI           shift and go to state 18
+    DIVISION        shift and go to state 19
+    MENORQ          shift and go to state 20
+    MAYORQ          shift and go to state 21
+    MENORIGUAL      shift and go to state 22
+    MAYORIGUAL      shift and go to state 23
+
+
+state 54
+
+    (1) declaracion -> INT expresion EQUALS expresion SEMI .
+
+    $end            reduce using rule 1 (declaracion -> INT expresion EQUALS expresion SEMI .)
+
+
+state 55
+
+    (3) declaracion -> DOUBLE expresion EQUALS expresion SEMI .
+
+    $end            reduce using rule 3 (declaracion -> DOUBLE expresion EQUALS expresion SEMI .)
+
+
+state 56
+
+    (5) declaracion -> FLOAT expresion EQUALS expresion SEMI .
+
+    $end            reduce using rule 5 (declaracion -> FLOAT expresion EQUALS expresion SEMI .)
+
+
+state 57
+
+    (7) declaracion -> BOOL expresion EQUALS expresion SEMI .
+
+    $end            reduce using rule 7 (declaracion -> BOOL expresion EQUALS expresion SEMI .)
+
+
+state 58
+
+    (9) declaracion -> STRING expresion EQUALS expresion SEMI .
+
+    $end            reduce using rule 9 (declaracion -> STRING expresion EQUALS expresion SEMI .)
+
